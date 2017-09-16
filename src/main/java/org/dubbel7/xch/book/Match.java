@@ -2,16 +2,14 @@ package org.dubbel7.xch.book;
 
 public class Match {
 
-    public enum Type {FILL, PARTIAL_FILL}
-
     private final String orderId;
-    private final Type type;
+    private final MatchType matchType;
     private final long matchedSize;
     private final long matchedPrice;
 
-    public Match(String orderId, Type type, long matchedSize, long matchedPrice) {
+    public Match(String orderId, MatchType matchType, long matchedSize, long matchedPrice) {
         this.orderId = orderId;
-        this.type = type;
+        this.matchType = matchType;
         this.matchedSize = matchedSize;
         this.matchedPrice = matchedPrice;
     }
@@ -20,8 +18,8 @@ public class Match {
         return orderId;
     }
 
-    public Type getType() {
-        return type;
+    public MatchType getMatchType() {
+        return matchType;
     }
 
     public long getMatchedSize() {
@@ -36,7 +34,7 @@ public class Match {
     public String toString() {
         return "Match{" +
                 "orderId='" + orderId + '\'' +
-                ", type=" + type +
+                ", matchType=" + matchType +
                 ", matchedSize=" + matchedSize +
                 ", matchedPrice=" + matchedPrice +
                 '}';

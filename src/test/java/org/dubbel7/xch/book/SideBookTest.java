@@ -17,7 +17,7 @@ public class SideBookTest {
     @Test
     public void addBidOrder() {
 
-        bidBook.addOrder("XXX", "CLID", true, 10, 111);
+        bidBook.addOrder("XXX", true, 10, 111);
 
     }
 }
