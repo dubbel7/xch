@@ -14,6 +14,18 @@ public class BookEntry {
         this.price = price;
     }
 
+    public long getSize() {
+        return size;
+    }
+
+    public int ordersSize() {
+        return orders.size();
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
     public void addOrder(final String orderId, final long orderSize) {
         size += orderSize;
         orders.add(new OrderEntry(orderId, orderSize));
@@ -44,14 +56,6 @@ public class BookEntry {
             }
         }
         return remainingSize;
-    }
-
-    public long getSize() {
-        return size;
-    }
-
-    public int ordersSize() {
-        return orders.size();
     }
 
     private static class OrderEntry {

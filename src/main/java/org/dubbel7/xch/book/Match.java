@@ -7,11 +7,11 @@ public class Match {
     private final long matchedSize;
     private final long matchedPrice;
 
-    public Match(String orderId, MatchType matchType, long matchedSize, long matchedPrice) {
+    public Match(String orderId, long matchedSize, long matchedPrice, MatchType matchType) {
         this.orderId = orderId;
-        this.matchType = matchType;
         this.matchedSize = matchedSize;
         this.matchedPrice = matchedPrice;
+        this.matchType = matchType;
     }
 
     public String getOrderId() {

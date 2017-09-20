@@ -6,20 +6,24 @@ public class OrderBook {
     private final SideBook bidBook = new SideBook(true);
     private final SideBook offerBook = new SideBook(false);
 
-    public MatchResult addOrder(String orderId, boolean bid, long size, long price) {
-        MatchResult matchResult;
-        if(bid) {
-            matchResult = offerBook.match(orderId, bid, size, price);
-            if(matchResult.getRemainingSize() > 0) {
-                bidBook.addOrder(orderId, bid, size, price);
+    public long addOrder(final String orderId,
+                                final boolean bid,
+                                final long size,
+                                final long price,
+                                final MatchCallback matchCallback) {
+        long remainingSize;
+        if (bid) {
+            remainingSize = offerBook.match(orderId, size, price, matchCallback);
+            if (remainingSize > 0) {
+                bidBook.addOrder(orderId, size, price);
             }
         } else {
-            matchResult = bidBook.match(orderId, bid, size, price);
-            if(matchResult.getRemainingSize() > 0) {
-                offerBook.addOrder(orderId, bid, size, price);
+            remainingSize = bidBook.match(orderId, size, price, matchCallback);
+            if (remainingSize > 0) {
+                offerBook.addOrder(orderId, size, price);
             }
         }
 
-        return matchResult;
+        return remainingSize;
     }
 }
