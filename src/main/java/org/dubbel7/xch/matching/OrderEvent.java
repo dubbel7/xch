@@ -1,4 +1,4 @@
-package org.dubbel7.xch.disruptor;
+package org.dubbel7.xch.matching;
 
 
 public class OrderEvent {

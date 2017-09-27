@@ -1,4 +1,4 @@
-package org.dubbel7.xch.disruptor;
+package org.dubbel7.xch.matching;
 
 import com.lmax.disruptor.EventHandler;
 

@@ -1,4 +1,4 @@
-package org.dubbel7.xch.book;
+package org.dubbel7.xch.matching.book;
 
 import org.junit.Before;
 import org.junit.Test;

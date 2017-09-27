@@ -1,4 +1,4 @@
-package org.dubbel7.xch.book;
+package org.dubbel7.xch.matching.book;
 
 
 public class OrderBook {
